@@ -1,0 +1,39 @@
+.div-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-input{
+    width: 600px;
+    height: 60px;
+    border-radius: 10px;
+    margin-top: 260px;
+    background: transparent;
+    border: 2px solid #468847;
+}
+
+.main-input::placeholder{
+    font-size: 40px;
+    text-align: center;
+    color: #CFCAAE;
+    font-weight: bold;
+}
+
+.submit-btn{
+    margin-top: 25px;
+    width: 180px;
+    height: 50px;
+    font-size: 30px;
+    background: transparent;
+    border: 1px solid #cfcaae;
+    box-shadow: 5px 4px 3px;
+    color: #468847;
+    border-radius: 10px;
+}
+
+.submit-btn:active{
+    transform: translateX(3px);
+    transform: translateY(2px);
+}

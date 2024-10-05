@@ -1,20 +1,17 @@
-import React from 'react'
-import './Display.css'
+import React from "react";
 
-export default function Display(){
+export default function Display(props){
 
-    const [name, setName] = React.useState("")
-
+    const [pokemon, setPokemon] = React.useState({})
     React.useEffect(() =>{
-    fetch("https://pokeapi.co/api/v2/pokemon/bulbasaur")
+    fetch(`https://pokeapi.co/api/v2/pokemon/${props.name}`)
         .then(res=>res.json())
-        .then(data=>setName(data))
+        .then(data=>setPokemon(data))
     },[])
-    console.log(name)    
+
+    console.log(pokemon)
+
     return(
-        <div className='div-input'>
-            <input type='text' placeholder='Enter pokemon name' className='main-input'></input>
-            <p>{JSON.stringfy(name, null, 2)}</p>
-        </div>
+        <img src={pokemon.sprites.front_shiny}></img>
     )
 }

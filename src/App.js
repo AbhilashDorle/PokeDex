@@ -1,8 +1,8 @@
 import './App.css';
-import Display from './Display'
+import Input from './Input'
 
 export default function App() {
   return (
-    <Display />
+    <Input />
   );
 }
