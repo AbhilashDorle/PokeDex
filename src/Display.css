@@ -1,0 +1,49 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    gap: 100px;
+}
+
+.img{
+    width: 20%;
+}
+
+.image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 180px;
+}
+
+.vertical-btn{
+    width: 200px;
+    height: 60px;
+}
+
+.horizontal-btn{
+    width: 200px;
+    height: 60px;
+}
+
+.btn{
+    font-size: 30px;
+    background: transparent;
+    border: 1px solid #cfcaae;
+    box-shadow: 5px 4px 3px;
+    color: #468847;
+    border-radius: 10px;
+}
+
+.btn:active{
+    transform: translateX(3px);
+    transform: translateY(2px);
+}
+
+.back-btn{
+    width: 120px;
+    margin-left: 30px;
+    margin-top: 30px;
+}

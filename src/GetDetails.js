@@ -1,11 +1,12 @@
 import React from "react";
 import "./GetDetails.css";
+import Display from "./Display";
 
 export default function GetDetails(props) {
   const [pokemon, setPokemon] = React.useState({});
 
   React.useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${props.name}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${props.name.toLowerCase()}`)
       .then((res) => res.json())
       .then((data) => setPokemon(data));
   }, [props.name]); // Add props.name as a dependency
@@ -13,9 +14,8 @@ export default function GetDetails(props) {
   return (
     <div>
       {pokemon.sprites && pokemon.sprites.other.dream_world ? (
-        <img
-          src={pokemon.sprites.other.dream_world.front_default}
-          className="img"
+        <Display
+          pokemon={pokemon}
           alt={props.name}
         />
       ) : (

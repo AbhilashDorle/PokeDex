@@ -1,6 +1,6 @@
 import React from 'react'
 import './Input.css'
-import Display from './Display'
+import Display from './GetDetails'
 
 
 export default function Input(){
