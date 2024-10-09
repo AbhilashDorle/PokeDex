@@ -1,0 +1,35 @@
+/* Encounter.css */
+.main-list-container {
+    list-style-type: none; /* Removes bullets */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    display: flex; /* Enables flexbox */
+    justify-content: space-evenly; /* Aligns items in the center */
+    gap: 20px; /* Adds space between list items */
+    flex-wrap: wrap; /* Wraps the items if they overflow */
+  }
+
+.list-containers {
+    padding: 10px;
+    margin-bottom: 30px;
+    background: transparent;
+    border: 1px solid #cfcaae;
+    box-shadow: 5px 4px 3px;
+    color: #468847;
+    border-radius: 10px;
+    font-size: 35px;
+}
+
+h1{
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    font-size: 60px;
+    color: #468847;
+}
+
+p{
+    margin-top: 50px;
+    font-size: 35px;
+    color: #468847;
+}

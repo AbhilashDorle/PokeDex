@@ -1,39 +1,73 @@
 import React from "react";
 import "./Display.css"
 import Input from "./Input";
+import Location from "./Location";
+import Encounter from "./Encounter"
+import Moves from "./Moves"
+import Evolution from "./Evolution"
 
 export default function Display({pokemon, alt}){
 
-    const [goback, setGoBack] = React.useState(false)
+    const [activeView, setActiveView] = React.useState('main')
 
-    // console.log(pokemon)
+    console.log(pokemon)
 
-    function handleClick(){
-        setGoBack(true)
+    function handleBack(){
+        setActiveView('back')
     }
 
-    return(
-        <div>
-            { !goback && (
-            <div>
-                <button className="btn back-btn" onClick={handleClick}>Back</button>
+    function handleLocation(){
+        setActiveView('location')
+    }
+
+    function handleAbilities(){
+        setActiveView('abilities')
+    }
+
+    function handleMoves(){
+        setActiveView('moves')
+    }
+
+    function handleEvolution(){
+        setActiveView('evolution')
+    }
+
+
+    const renderMainView = () => (
+             <div>
+                <Button label="Back" className="btn back-btn" onClick={handleBack}/>
                 <div className="main-container">
-                    <button className="btn vertical-btn">Abilities</button>
+                    <Button label="Encounters" className="btn vertical-btn" onClick={handleAbilities}/>
                     <div className="image-container">
-                        <button className="btn horizontal-btn">Moves</button>
+                        <Button label="Moves" className="btn horizontal-btn" onClick={handleMoves}/>
                         <img
                         src={pokemon.sprites.other.dream_world.front_default}
                         className="img"
                         alt={alt}
                         />
-                        <button className="btn horizontal-btn">Location</button>
+                        <Button label="Location" className="btn horizontal-btn" onClick={handleLocation}/>
                     </div>
-                    <button className="btn vertical-btn">Evolution</button>
+                    <Button label="Evolution" className="btn vertical-btn" onClick={handleEvolution}/>
                 </div>
-            </div>)}
-            {goback && <Input />}
+            </div>
+    )
+
+    return(
+        <div>
+            {activeView==='main' && renderMainView()}
+            {activeView==='location' && <Location pokemon={pokemon}/>}
+            {activeView==='back' && <Input pokemon={pokemon}/>}
+            {activeView==='abilities' && <Encounter pokemon={pokemon} name={alt} />}
+            {activeView==='evolution' && <Evolution pokemon={pokemon}/>}
+            {activeView==='moves' && <Moves pokemon={pokemon}/>}
         </div>
     )
 }
 
-//pokemon.sprites.other.dream_world.front_default
+function Button({ label, className, onClick }) {
+    return (
+      <button className={`btn ${className}`} onClick={onClick}>
+        {label}
+      </button>
+    );
+  }

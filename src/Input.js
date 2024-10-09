@@ -1,6 +1,6 @@
 import React from 'react'
 import './Input.css'
-import Display from './GetDetails'
+import GetDetails from './GetDetails'
 
 
 export default function Input(){
@@ -13,16 +13,27 @@ export default function Input(){
             setInputFlag(true)
     }
     
-    const handleChange = event => setPokemonName(event.target.value)
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+          handleClick(); // Trigger submit button logic
+        }
+      };
+      
+    const handleChange = event => setPokemonName(event.target.value.toLowerCase())
         
     return(
         <div>
             {!inputFlag &&
             <div className='div-input'>
-                <input type='text' placeholder='Enter pokemon name' className='main-input' onChange={handleChange}></input>
+                <input 
+                    type='text' 
+                    placeholder='Enter pokemon name' 
+                    className='main-input' 
+                    onChange={handleChange}
+                    onKeyDown={handleKeyDown}></input>
                 <button onClick={handleClick} className='submit-btn'>Submit</button>
             </div>}
-            {inputFlag && <Display name={pokemonName}/>}
+            {inputFlag && <GetDetails name={pokemonName}/>}
         </div>
     )
 }

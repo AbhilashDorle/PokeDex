@@ -6,7 +6,7 @@ export default function GetDetails(props) {
   const [pokemon, setPokemon] = React.useState({});
 
   React.useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${props.name.toLowerCase()}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${props.name}`)
       .then((res) => res.json())
       .then((data) => setPokemon(data));
   }, [props.name]); // Add props.name as a dependency
