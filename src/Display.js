@@ -1,7 +1,7 @@
 import React from "react";
 import "./Display.css"
 import Input from "./Input";
-import Location from "./Location";
+// import Location from "./Location";
 import Encounter from "./Encounter"
 import Moves from "./Moves"
 import Evolution from "./Evolution"
@@ -16,9 +16,9 @@ export default function Display({pokemon, alt}){
         setActiveView('back')
     }
 
-    function handleLocation(){
-        setActiveView('location')
-    }
+    // function handleLocation(){
+    //     setActiveView('location')
+    // }
 
     function handleAbilities(){
         setActiveView('abilities')
@@ -34,20 +34,21 @@ export default function Display({pokemon, alt}){
 
 
     const renderMainView = () => (
-             <div>
+             <div className="main-container">
                 <Button label="Back" className="btn back-btn" onClick={handleBack}/>
-                <div className="main-container">
-                    <Button label="Encounters" className="btn vertical-btn" onClick={handleAbilities}/>
+                <div className="main-content-container">
+                    {/* <Button label="Encounters" className="btn vertical-btn" onClick={handleAbilities}/> */}
                     <div className="image-container">
-                        <Button label="Moves" className="btn horizontal-btn" onClick={handleMoves}/>
+                        <Button label="EVOLUTION" className="btn horizontal-btn" onClick={handleEvolution}/>
+                        
                         <img
                         src={pokemon.sprites.other.dream_world.front_default}
                         className="img"
                         alt={alt}
                         />
-                        <Button label="Location" className="btn horizontal-btn" onClick={handleLocation}/>
+                        <Button label="ENCOUNTER" className="btn horizontal-btn" onClick={handleAbilities}/>
                     </div>
-                    <Button label="Evolution" className="btn vertical-btn" onClick={handleEvolution}/>
+                    <Button label="MOVES" className="btn vertical-btn" onClick={handleMoves}/>
                 </div>
             </div>
     )
@@ -55,11 +56,11 @@ export default function Display({pokemon, alt}){
     return(
         <div>
             {activeView==='main' && renderMainView()}
-            {activeView==='location' && <Location pokemon={pokemon}/>}
+            {/* {activeView==='location' && <Location pokemon={pokemon}/>} */}
             {activeView==='back' && <Input pokemon={pokemon}/>}
             {activeView==='abilities' && <Encounter pokemon={pokemon} name={alt} />}
-            {activeView==='evolution' && <Evolution pokemon={pokemon}/>}
-            {activeView==='moves' && <Moves pokemon={pokemon}/>}
+            {activeView==='evolution' && <Evolution pokemon={pokemon} name={alt}/>}
+            {activeView==='moves' && <Moves pokemon={pokemon} name={alt}/>}
         </div>
     )
 }

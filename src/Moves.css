@@ -1,10 +1,12 @@
-.encounter-main-container{
+/* Encounter.css */
+
+.moves-main-container{
     background: linear-gradient(#FFFFFF,#bab9b4);
     background-size: cover;
     overflow-y: auto;
-    height: 100vh;
 }
-.encounter-main-list-container {
+
+.moves-main-list-container {
     list-style-type: none; 
     padding: 0; 
     margin: 0; 
@@ -14,7 +16,8 @@
     flex-wrap: wrap; 
   }
 
-.encounter-list-containers {
+
+.moves-list-containers {
     padding: 10px;
     margin-bottom: 30px;
     background: transparent;
@@ -27,7 +30,7 @@
     text-align: center;
 }
 
-.encounter-heading{
+.moves-heading{
     text-align: center;
     margin-top: 40px;
     margin-bottom: 60px;
@@ -35,13 +38,13 @@
     color: #468847;
 }
 
-.encounter-para{
+.moves-para{
     margin-top: 50px;
     font-size: 35px;
     color: #468847;
 }
 
-.encounter-back-btn{
+.moves-back-btn{
     font-size: 45px;
     background: transparent;
     border: 1px solid #cfcaae;

@@ -22,7 +22,7 @@ export default function Input(){
     const handleChange = event => setPokemonName(event.target.value.toLowerCase())
         
     return(
-        <div>
+        <div className='main-input-container'>
             {!inputFlag &&
             <div className='div-input'>
                 <input 

@@ -29,16 +29,16 @@ export default function Encounter({ pokemon, name}){
       }
 
       const currView = () => (
-        <div>
-          <button className="btn back-btn" onClick={handleBack}>Back</button>
-          <h1>Encounter Locations</h1>
-          <ul className="main-list-container">
+        <div className="encounter-main-container">
+          <button className="encounter-back-btn" onClick={handleBack}>Back</button>
+          <h1 className="encounter-heading">Encounter Locations</h1>
+          <ul className="encounter-main-list-container">
             {locationArray.length > 0 ? (
               locationArray.map((location, index) => (
-                <li key={index} className="list-containers">{location}</li>
+                <li key={index} className="encounter-list-containers">{location}</li>
               ))
             ) : (
-              <p>No encounter locations available.</p>
+              <p className="encounter-para">No encounter locations available.</p>
             )}
           </ul>
         </div>
@@ -46,7 +46,7 @@ export default function Encounter({ pokemon, name}){
 
 
       return (
-        <div>
+        <div className="encounter-main-container">
           {!back && currView()}
           {back && 
             <Display 
