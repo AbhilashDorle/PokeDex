@@ -53,3 +53,8 @@
     margin-left: 30px;
     margin-top: 30px;
 }
+
+.encounter-list-containers:hover{
+    transform: translateX(4px);
+    transform: translateY(8px);
+}

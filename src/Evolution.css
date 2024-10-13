@@ -1,13 +1,13 @@
 /* Encounter.css */
 
-.moves-main-container{
+.evol-main-container{
     background: linear-gradient(#FFFFFF,#bab9b4);
     background-size: cover;
     overflow-y: auto;
     height: 100vh;
 }
 
-.moves-main-list-container {
+.evol-main-list-container {
     list-style-type: none; 
     padding: 0; 
     margin: 0; 
@@ -18,7 +18,7 @@
   }
 
 
-.moves-list-containers {
+.evol-list-containers {
     padding: 10px;
     margin-bottom: 30px;
     background: transparent;
@@ -31,7 +31,7 @@
     text-align: center;
 }
 
-.moves-heading{
+.evol-heading{
     text-align: center;
     margin-top: 40px;
     margin-bottom: 60px;
@@ -39,13 +39,13 @@
     color: #468847;
 }
 
-.moves-para{
+.evol-para{
     margin-top: 50px;
     font-size: 35px;
     color: #468847;
 }
 
-.moves-back-btn{
+.evol-back-btn{
     font-size: 45px;
     background: transparent;
     border: 1px solid #cfcaae;
@@ -58,7 +58,7 @@
     margin-top: 30px;
 }
 
-.moves-list-containers:hover{
+.evol-list-containers:hover{
     transform: translateX(4px);
     transform: translateY(8px);
 }
